@@ -1,0 +1,88 @@
+main {
+    width: 100%;
+    padding-bottom: 100px;
+    min-height: 100%;
+}
+
+#schema {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+    margin: 20px;
+}
+
+.day:active {
+    width: 90%;
+}
+
+.day {
+    margin: auto;
+    margin-top: 20px;
+    padding: 25px 30px;
+    padding-bottom: 50px;
+    background-color:  #32302F;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 30px;
+    width: 90%;
+    transition: 0.2s ease-in-out;
+}
+
+.day:hover {
+    width: 92%;
+    transition: 0.2s ease-in-out;
+}
+
+.day summary::marker {
+    content: "";
+}
+
+.day summary {
+    font-size: 60px;
+    color: #568578;
+    text-decoration: none;
+}
+
+.day h3 {
+    font-size: 41px;
+    color: #689d6a;
+}
+
+.day p {
+    font-size: 30px;
+
+    height: 35px;
+    line-height: 15px;
+}
+
+.time {
+    color: #FB4934;
+}
+
+.teacher, .classroom {
+    color:  #D79921;
+    font-size: 25px;
+}
+
+.lessons-div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lesson-div {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+
+    background-color: #282828;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    min-width: 225px;
+}
+
+@media screen and (max-width: 630px) {
+    .lesson-div {
+        width: 100%;
+    }
+}

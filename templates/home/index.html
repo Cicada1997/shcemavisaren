@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block head_ext %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home/index.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<main>
+    <h1>Schema för TE24a</h1>
+    <div id="schema">
+        {% for day in schema %}
+            {% if day.lessons|length > 0 %}
+                <details class="day">
+                    <summary>{{ day.name }}</summary>
+                    
+                    <div class="lessons-div">
+                        {% for lesson in day.lessons %}
+                        <section class="lesson-div">
+                            <h3>{{ lesson.name }}</h3>
+                            <p class="time">{{ lesson.start }} → {{ lesson.end }}</p>
+                            <p class="teacher">{{ lesson.teacher }}</p>
+                            <p class="classroom">{{ lesson.room }}</p>
+                        </section>
+                        {% endfor %}
+                    </div>
+                </details>
+            {% endif %}
+        {% endfor %}
+    </div>
+</main>
+
+{% endblock %}

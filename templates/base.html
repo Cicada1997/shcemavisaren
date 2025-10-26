@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sv/SE">
+
+<head>
+    <meta name="msvalidate.01" content="7EB8DF4CAB704AD5C143943B8AB2FFFF" />
+
+    <title>Schemavisaren</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    {% block head_ext %}{% endblock %}
+</head>
+<body>
+    <nav class="titlebar">   
+        <!-- <a href="{{ url_for("home") }}"><h1>Välkommen till den bra schemavisaren</h1></a> -->
+    </nav>
+
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

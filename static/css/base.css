@@ -1,0 +1,25 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color:  #D79921;
+    user-select: none;
+}
+
+body {
+    background-color: #282828;
+}
+
+.titlebar {
+    text-align: center;
+}
+
+.titlebar a,
+.titlebar a h1 {
+    text-decoration: none;
+}
