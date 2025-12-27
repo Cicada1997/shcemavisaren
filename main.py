@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from schema import get_schema
+from schema import get_schema, Day
 
 import threading
 import time
@@ -7,7 +7,9 @@ import time
 
 app = Flask(__name__)
 running = True
-schema = None
+schema: list[Day] | None = None
+
+UPDATE_TIME_MIN = 25
 
 # # # # # #
 #  SCHEMA #
@@ -19,7 +21,7 @@ def update_schema():
     while running:
         time.sleep(1)
 
-        if time.time() - last_time < (5 * 60):
+        if time.time() - last_time < (UPDATE_TIME_MIN * 60):
             continue
 
         last_time = time.time()
@@ -36,12 +38,13 @@ thread.start()
 @app.route("/")
 def home():
     global schema
-    if schema is None:
+    if not schema:
         schema = get_schema()
     return render_template("home/index.html", schema=schema)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=1997) #, debug=True)
+    app.run(host="0.0.0.0", port=5000)#, debug=True)
+    # app.run(host="::1", port=5000)#, debug=True)
     running = False
     thread.join()

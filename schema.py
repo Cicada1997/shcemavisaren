@@ -4,7 +4,10 @@ import json
 
 debug = False
 
-def fetch_schema():
+def fetch_schema(week=None):
+    if not week:
+        week = datetime.now().isocalendar()[1]
+
     url_1 = "https://web.skola24.se/api/get/timetable/render/key"
 
     headers_1 = {
@@ -48,7 +51,6 @@ def fetch_schema():
                 "Sec-Fetch-Site": "same-origin"
             }
 
-            week = datetime.now().isocalendar()[1]
 
             week_request_data = {
                 "renderKey": key,
@@ -130,6 +132,11 @@ def get_schema():
         formatted.append(Day(week[d_num]))
 
     json_schema = fetch_schema()
+
+    week_no = datetime.now().isocalendar()[1]
+    while not json_schema: 
+        week_no += 1
+        json_schema = fetch_schema(week_no)
 
     for lesson in json_schema:
         weekday_index = lesson["dayOfWeekNumber"] -1
